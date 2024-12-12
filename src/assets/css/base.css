@@ -1,0 +1,65 @@
+:root {
+  --black: #212121;
+  --light: #F9F9F9;
+  --blue: #2E3A8C;
+  --green: #3B755F;
+  --beige: #F2EBDB;
+  --white: #FFFFFF;
+  --grey-line: #B0B0B0;
+  --grey-background: #F9F9F9;
+}
+
+/* Box sizing rules */
+*,*::before,*::after { box-sizing: border-box; }
+
+/* Remove default margin */
+body,h1,h2,h3,h4,p,figure,dl,dd { margin: 0; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'], ol[role='list'] { list-style: none; }
+
+/* Set core root defaults */
+html { scroll-behavior: smooth; }
+
+/* Set core body defaults */
+body { min-height: 100vh; text-rendering: optimizeLegibility; line-height: 1.5; color: var(--green); background: var(--white); font-family: Cabin, 'Helvetica Neue', sans-serif; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select { font: inherit; }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.blue-bg {
+  background-color: var(--blue);
+}
+
+.green-bg {
+  background-color: var(--green);
+}
+
+.beige-bg {
+  background-color: var(--beige);
+}
+
+.black-bg {
+  background-color: var(--black);
+}
+
+.white-bg {
+  background-color: var(--white);
+}
+
+svg {
+  display: block;
+}
