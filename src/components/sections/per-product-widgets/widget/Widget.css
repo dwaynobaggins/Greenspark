@@ -1,9 +1,9 @@
 .widget {
+    width: 222px;
     gap: 10px;
 }
 
 .pill {
-    width: 222px;
     height: 66px;
     border-radius: 6px;
     padding: 10.3px 13.89px 10.3px 11.91px;
@@ -44,6 +44,10 @@
     font-size: 17.86px;
     font-weight: 700;
     line-height: 21.71px;
+}
+
+.smaller {
+    font-size: smaller;
 }
 
 .tooltip {

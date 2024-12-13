@@ -40,3 +40,7 @@
 }
 
 .wrap { flex-wrap: wrap; }
+
+.relative {
+    position: relative;
+}
