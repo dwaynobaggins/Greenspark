@@ -6,36 +6,11 @@ p {
     font-style: normal;
 }
 
-
 h3 {
     font-family: Cabin;
     color: var(--black);
     font-size: 30px;
     font-weight: 700;
     line-height: 36px;
-    /* text-decoration-skip-ink: none; */
 }
 
-/* 
-@media (min-width: 1440px) {
-
-    h3 {
-        font-size: 56px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 64px;
-        margin-bottom: 16px;
-        letter-spacing: -1px;
-    }
-
-    h4 {
-        color: var(--oslo-grey);
-        font-family: Inter;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        letter-spacing: 1px;
-    }
-
-} */

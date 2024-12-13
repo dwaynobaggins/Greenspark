@@ -1,12 +1,9 @@
 <template>
-    <!-- <input type="checkbox" id="checkbox" :checked="checked" @change="$emit('changeLinked')" /> -->
-     
     <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" />
     <div class="circle"></div>
     <div class="tick">
         <Tick width="10" height="10" />
-    </div>  
-    
+    </div>    
 </template>
 
 <style scoped>
@@ -43,8 +40,6 @@
         &:hover + .circle  {
             opacity: 0.5;
         }
-
-
     }
 
     .circle {

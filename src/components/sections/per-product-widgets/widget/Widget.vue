@@ -27,7 +27,6 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <!-- <LinkedCheckbox :checked="linkedToProfile" @change-linked="linkedToProfile = !linkedToProfile;" /> -->
                     <LinkedCheckbox :id="type + '-cb'" :checked="linkedToProfile" />
                 </div>
             </div>
