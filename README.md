@@ -16,7 +16,7 @@ Create a front-end service that allows a user to display product widgets as well
 
      npm install  
 
-## Run the project on http://localhost:5173/
+## Run the project on localhost:5173/
 
      npm run dev
 
