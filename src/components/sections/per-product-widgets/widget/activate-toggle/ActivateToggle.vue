@@ -1,74 +1,70 @@
 <template>
-    <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" @change="emit('toggle')" />
-    <!-- <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" /> -->
-    <div class="circle"></div>  
+    <input type="checkbox" :id="id" class="checkbox relative" :disabled="checked" :checked="checked" @change="emit('toggle')" />
+    <div class="circle"></div>
+    <div class="pill"></div>  
 </template>
 
 <style scoped>
-/*     
+
     .checkbox {
-        z-index: 1;
         cursor: pointer;
-        min-width: 18px;
+        min-width: 40px;
         min-height: 18px;
         appearance: none;
-        border-radius: 4px;
-        border: solid var(--black) 2px;
+        border-radius: 20px;
+        border: 0.59px solid var(--greenish);
         margin: 0;
         background-color: var(--white);
         transition: var(--default-transition);
         display: block;
+        box-shadow: 0px 0.88px 5.9px 0px #00000026 inset;
 
         &:checked {
             background-color: var(--green);
         }
 
-        &:checked ~ .tick  {
-            opacity: 1;
+        &:checked ~ .pill  {
+            left: 21px;
         }
-
+ 
         &:disabled,  &:disabled+label {
-            opacity: 0.4;
+            cursor: unset;
         }
         
-        &:hover  {
-            border: solid var(--grey-line) 2px;
-        }
-
-        &:hover + .circle  {
+        &:hover:not([disabled]) + .circle  {
             opacity: 0.5;
-        }
+        } 
     }
-
+   
+    .pill {
+        position: absolute;
+        transition: var(--default-transition);
+        top: -1px;
+        left: -1px;
+        pointer-events: none;
+        border-radius: 50%;
+        border: 0.59px solid var(--beige);
+        background-color: var(--light);
+        width: 20px;
+        height: 20px;
+    }
+ 
     .circle {
         position: absolute;
         transition: var(--default-transition);
         top: -6px;
         left: -6px;
+        pointer-events: none;
         border-radius: 50%;
-        background-color: #AFC6BD;
+        background-color: var(--greenish);
         opacity: 0;
         width: 30px;
         height: 30px;
     }
 
-    .tick {
-        position: absolute;
-        z-index: 5;
-        transition: var(--default-transition);
-        width: 12px;
-        height: 12px;
-        opacity: 0;
-        top: 4px;
-        left: 4px;
-        pointer-events: none;
-    } */
-
 </style>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
-
     const emit = defineEmits(['toggle'])
 
     const props = defineProps({

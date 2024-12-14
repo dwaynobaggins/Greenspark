@@ -32,6 +32,7 @@
   const fetchWidgets =  async () => {
     const response = await axios.get('https://b795b019-1f84-41f4-93a3-a702d686c75a.mock.pstmn.io/product-widgets');
     widgets.value = response.data;
+    
     for (let x = 0; x < widgets.value.length; x++) {
       widgetsActiveStatus.value[x] = widgets.value[x].active;
     }

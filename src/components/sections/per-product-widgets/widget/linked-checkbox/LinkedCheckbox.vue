@@ -48,7 +48,7 @@
         top: -6px;
         left: -6px;
         border-radius: 50%;
-        background-color: #AFC6BD;
+        background-color: var(--greenish);
         opacity: 0;
         width: 30px;
         height: 30px;
