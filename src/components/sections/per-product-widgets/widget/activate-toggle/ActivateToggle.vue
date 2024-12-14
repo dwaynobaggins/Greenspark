@@ -1,13 +1,11 @@
 <template>
-    <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" />
-    <div class="circle"></div>
-    <div class="tick">
-        <Tick width="10" height="10" />
-    </div>    
+    <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" @change="emit('toggle')" />
+    <!-- <input type="checkbox" :id="id" class="checkbox relative" :checked="checked" /> -->
+    <div class="circle"></div>  
 </template>
 
 <style scoped>
-    
+/*     
     .checkbox {
         z-index: 1;
         cursor: pointer;
@@ -64,12 +62,14 @@
         top: 4px;
         left: 4px;
         pointer-events: none;
-    }
+    } */
 
 </style>
 
 <script setup lang="ts">
-    import Tick from '@/components/icons/tick.vue';
+    import { ref } from 'vue'
+
+    const emit = defineEmits(['toggle'])
 
     const props = defineProps({
         id: { type: String, default:"checkbox" },

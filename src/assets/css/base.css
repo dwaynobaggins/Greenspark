@@ -7,6 +7,8 @@
   --white: #FFFFFF;
   --grey-line: #B0B0B0;
   --grey-background: #F9F9F9;
+
+  --default-transition: all 200ms ease-in-out;
 }
 
 /* Box sizing rules */

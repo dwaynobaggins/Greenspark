@@ -8,8 +8,8 @@
         width: 16px;
         height: 16px;
         cursor: pointer;
-        box-sizing:border-box;
-        transition: all 200ms ease-in-out;
+        box-sizing: border-box;
+        transition: var(--default-transition);
     }
 
     .btn:hover {

@@ -37,8 +37,11 @@
                 <ColourBtn v-for="colour in colourOptions" :colour="colour" :selectedColour="selectedColour" @change-badge-colour="changeBadgeColour" />
             </div>            
         </div>
-        <div>
+        <div class="flex justify-content-space-between">
             <p>Activate badge</p>
+            <div class="relative">
+                <ActivateToggle :id="type + '-rb'" :checked="active" @toggle="emit('alertAllToggles', index)" />
+            </div>
         </div>     
     </div>
 </template>
@@ -53,8 +56,12 @@
     import LinkedCheckbox from './linked-checkbox/LinkedCheckbox.vue';
     import Tooltip from '@/components/icons/Tooltip.vue'; 
     import ColourBtn from './colour-btn/ColourBtn.vue';
+    import ActivateToggle from './activate-toggle/ActivateToggle.vue';
+
+    const emit = defineEmits(['alertAllToggles'])
 
     const props = defineProps({
+        index: { type: Number, default: 0},
         id: { type: Number, default:0 },
         type: { type: String, default:"" },
         amount: { type: Number, default:0 },

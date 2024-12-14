@@ -5,12 +5,13 @@
           <h3>Per product widgets</h3>
           <hr />
           <div class="flex wrap widgets">
-              <Widget v-for="(widget, index) in widgets" 
+              <Widget v-for="(widget, index) in widgets" @alert-all-toggles="alertAllToggles"
+                :index="index"
                 :id="widget.id"
                 :type="widget.type"
                 :amount="widget.amount"
                 :action="widget.action"
-                :active="widget.active"
+                :active="widgetsActiveStatus[index]"
                 :linked="widget.linked"
                 :colour="widget.selectedColor" />
           </div>
@@ -26,15 +27,30 @@
   import Widget from './widget/Widget.vue';
 
   const widgets = ref([]);
- 
+  const widgetsActiveStatus = ref([])
+
   const fetchWidgets =  async () => {
     const response = await axios.get('https://b795b019-1f84-41f4-93a3-a702d686c75a.mock.pstmn.io/product-widgets');
     widgets.value = response.data;
+    for (let x = 0; x < widgets.value.length; x++) {
+      widgetsActiveStatus.value[x] = widgets.value[x].active;
+    }
   }
   
   onMounted(async () => {
     await fetchWidgets();
   })
+
+  const alertAllToggles = (index) => {
+    for (let j = 0; j < widgetsActiveStatus.value.length; j++) {
+      if (j == index) {
+        widgetsActiveStatus.value[j] = true;
+      }
+      else {
+        widgetsActiveStatus.value[j] = false;
+      } 
+    }
+  }
 
 </script>
 

@@ -64,7 +64,7 @@
     position: absolute;
     z-index: 1;
 
-    transition: all 200ms ease-in-out;
+    transition: var(--default-transition);
     transition-delay: 250ms;
     width: 248px;
     height: 162px;
