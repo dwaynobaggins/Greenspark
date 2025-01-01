@@ -5,7 +5,7 @@
           <h3>Per product widgets</h3>
           <hr />
           <div class="flex wrap widgets">
-              <Widget v-for="(widget, index) in widgets" @alert-all-toggles="alertAllToggles"
+              <Widget v-for="(widget, index) in widgets" 
                 :index="index"
                 :id="widget.id"
                 :type="widget.type"
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue'
+  import { ref, onMounted, provide } from 'vue'
   import axios from 'axios'
 
   import Widget from './widget/Widget.vue';
@@ -42,7 +42,7 @@
     await fetchWidgets();
   })
 
-  const alertAllToggles = (index) => {
+  const updateWidgetActiveStatus = (index) => {
     for (let j = 0; j < widgetsActiveStatus.value.length; j++) {
       if (j == index) {
         widgetsActiveStatus.value[j] = true;
@@ -52,6 +52,8 @@
       } 
     }
   }
+
+  provide('location', updateWidgetActiveStatus);
 
 </script>
 

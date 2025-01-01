@@ -1,5 +1,5 @@
 <template>
-    <input type="checkbox" :id="id" class="checkbox relative" :disabled="checked" :checked="checked" @change="emit('toggle')" />
+    <input type="checkbox" :id="id" class="checkbox relative" :disabled="checked" :checked="checked" @change="updateWidgetActiveStatus(index) " />
     <div class="circle"></div>
     <div class="pill"></div>  
 </template>
@@ -65,9 +65,12 @@
 </style>
 
 <script setup lang="ts">
-    const emit = defineEmits(['toggle'])
+    import { inject } from 'vue'
+
+    const updateWidgetActiveStatus = inject('location')
 
     const props = defineProps({
+        index: { type: Number, default: 0},
         id: { type: String, default:"checkbox" },
         checked: { type: Boolean, default:"" },
     })

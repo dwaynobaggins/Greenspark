@@ -40,9 +40,9 @@
         <div class="flex justify-content-space-between">
             <p>Activate badge</p>
             <div class="relative">
-                <ActivateToggle :id="type + '-rb'" :checked="active" @toggle="emit('alertAllToggles', index)" />
+                <ActivateToggle :index="index" :id="type + '-rb'" :checked="active" />
             </div>
-        </div>     
+        </div>
     </div>
 </template>
 
@@ -57,8 +57,6 @@
     import Tooltip from '@/components/icons/Tooltip.vue'; 
     import ColourBtn from './colour-btn/ColourBtn.vue';
     import ActivateToggle from './activate-toggle/ActivateToggle.vue';
-
-    const emit = defineEmits(['alertAllToggles'])
 
     const props = defineProps({
         index: { type: Number, default: 0},
